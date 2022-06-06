@@ -22,7 +22,7 @@
       "com.icey.ligma.LigmaModMain"
     ],
     "client": [
-      "com.icey.ligma.LigmaClientModInitializer"
+      "com.icey.ligma.client.LigmaClientModInitializer"
     ]
   },
   "mixins": [

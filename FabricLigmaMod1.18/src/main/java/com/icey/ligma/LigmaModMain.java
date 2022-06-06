@@ -1,5 +1,6 @@
 package com.icey.ligma;
 
+import com.icey.ligma.registries.BlockRegistryKt;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,6 +21,7 @@ public class LigmaModMain implements ModInitializer {
 		LOGGER.info("Ligma balls lmao");
 		EntityRegistryKt.registerEntities();
 		ItemRegistryKt.registerItems();
+		BlockRegistryKt.registerBlocks();
 		SoundRegistryKt.registerSounds();
 
 	}

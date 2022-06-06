@@ -2,7 +2,9 @@ package com.icey.ligma.entities.projectiles
 
 // import com.icey.ligma.packets.create
 import com.icey.ligma.*
-import com.icey.ligma.tools.packets.EntitySpawnPacket
+import com.icey.ligma.client.PacketID
+import com.icey.ligma.items.NishanthsInnocientFace
+import com.icey.ligma.packets.EntitySpawnPacket
 import net.fabricmc.api.EnvType
 import net.fabricmc.api.Environment
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents
@@ -10,6 +12,7 @@ import net.minecraft.entity.EntityType
 import net.minecraft.entity.LivingEntity
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity
 import net.minecraft.item.Item
+import net.minecraft.item.ItemStack
 import net.minecraft.network.Packet
 import net.minecraft.particle.ItemStackParticleEffect
 import net.minecraft.particle.ParticleEffect
@@ -71,6 +74,12 @@ class AhegaoProjectileEntity : ThrownItemEntity {
 
     override fun getDefaultItem(): Item {
         return ahegaoface
+    }
+
+    override fun setItem(item: ItemStack?) {
+        if (!item!!.isOf(nishanthsInnocientFace)) {
+            super.setItem(item)
+        }
     }
 
     // @Environment(EnvType.CLIENT)
