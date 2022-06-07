@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ABC",
+    "DEF",
+    "GHI"
+  ],
+  "key": {
+    "A": {
+      "item": "ligma:nickysbabyface"
+    },
+    "B": {
+      "item": "ligma:danielsfunnyface"
+    },
+    "C": {
+      "item": "ligma:justinssmugface"
+    },
+    "D": {
+      "item": "ligma:minhshornyface"
+    },
+    "E": {
+      "item": "ligma:nishanthsinnocientface"
+    },
+    "F": {
+      "item": "ligma:deerajssmartassface"
+    },
+    "G": {
+      "item": "ligma:adalsdeadface"
+    },
+    "H": {
+      "item": "ligma:evensweirdface"
+    },
+    "I": {
+      "item": "ligma:ethansdumbface"
+    }
+  },
+  "result": {
+    "item": "ligma:thevillagee3",
+    "count": 1
+  }
+}
