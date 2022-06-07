@@ -3,7 +3,6 @@ package com.icey.ligma.client
 import com.icey.ligma.LigmaEntities
 import com.icey.ligma.LigmaEntities.danielsCanidate
 import com.icey.ligma.LigmaModMain
-import com.icey.ligma.client.model.DanielsCanidateModel
 import com.icey.ligma.client.model.TexturedModelDataHelper
 import com.icey.ligma.entities.renderers.DanielsCanidateRenderer
 import com.icey.ligma.packets.PacketBufUtil
@@ -13,7 +12,6 @@ import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry
 import net.fabricmc.fabric.impl.networking.ClientSidePacketRegistryImpl
 import net.minecraft.client.MinecraftClient
 import net.minecraft.client.render.entity.FlyingItemEntityRenderer
-import net.minecraft.client.render.entity.model.EntityModel
 import net.minecraft.client.render.entity.model.EntityModelLayer
 import net.minecraft.entity.Entity
 import net.minecraft.entity.EntityType
@@ -23,14 +21,14 @@ import net.minecraft.util.registry.Registry
 import java.util.*
 
 val PacketID = Identifier(LigmaModMain.MODID, "spawn_packet")
-val modelCubeLayer = EntityModelLayer(Identifier(LigmaModMain.MODID, "danielscanidate"), "main")
+val modelBipedLayer = EntityModelLayer(Identifier(LigmaModMain.MODID, "danielscanidate"), "main")
 
 class LigmaClientModInitializer : ClientModInitializer {
 
     override fun onInitializeClient() {
         EntityRendererRegistry.register(LigmaEntities.ahegaoProjectileEntityType) { context -> FlyingItemEntityRenderer(context) }
         EntityRendererRegistry.register(danielsCanidate) { context -> DanielsCanidateRenderer(context) }
-        EntityModelLayerRegistry.registerModelLayer(modelCubeLayer) { TexturedModelDataHelper.getTexturedModelData() }
+        EntityModelLayerRegistry.registerModelLayer(modelBipedLayer) { TexturedModelDataHelper.getTexturedModelData() }
         recieveEntityPacket()
     }
 

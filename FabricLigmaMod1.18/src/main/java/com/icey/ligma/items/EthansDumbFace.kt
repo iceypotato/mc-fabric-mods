@@ -7,6 +7,7 @@ import net.minecraft.entity.effect.StatusEffect
 import net.minecraft.entity.effect.StatusEffectInstance
 import net.minecraft.entity.effect.StatusEffects
 import net.minecraft.entity.mob.CaveSpiderEntity
+import net.minecraft.entity.mob.MobEntity
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.item.Item
 import net.minecraft.item.ItemStack
@@ -24,7 +25,8 @@ class EthansDumbFace(settings: Settings?) : Item(settings) {
 
     override fun useOnEntity(stack: ItemStack?, user: PlayerEntity?, entity: LivingEntity?, hand: Hand?): ActionResult {
         entity!!.sleep(BlockPos(entity.x, entity.y, entity.z))
-        user!!.sendMessage(Text.of("You gave it some weed, now its just sitting there."), false)
+        user!!.sendMessage(Text.of("You gave it some weed, it is stoned as hell."), false)
+        if (entity is MobEntity) entity.isAiDisabled = true
         return super.useOnEntity(stack, user, entity, hand)
     }
 

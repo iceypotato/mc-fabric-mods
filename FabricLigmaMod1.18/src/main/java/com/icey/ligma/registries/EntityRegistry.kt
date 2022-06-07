@@ -2,6 +2,7 @@ package com.icey.ligma
 
 import com.icey.ligma.entities.mobs.DanielsCanidate
 import com.icey.ligma.entities.projectiles.AhegaoProjectileEntity
+import com.icey.ligma.entities.projectiles.CumProjectileEntity
 import net.fabricmc.fabric.api.`object`.builder.v1.entity.FabricDefaultAttributeRegistry
 import net.fabricmc.fabric.api.`object`.builder.v1.entity.FabricEntityTypeBuilder
 import net.minecraft.entity.EntityDimensions
@@ -23,6 +24,7 @@ FabricEntityTypeBuilder.create(SpawnGroup.MISC,
 object LigmaEntities {
     lateinit var ahegaoProjectileEntityType: EntityType<AhegaoProjectileEntity>
     lateinit var danielsCanidate: EntityType<DanielsCanidate>
+    lateinit var cumProjectileEntityType: EntityType<CumProjectileEntity>
 }
 
 fun registerEntities() {
@@ -34,6 +36,15 @@ fun registerEntities() {
             .trackRangeBlocks(4)
             .trackedUpdateRate(10) // necessary for all thrown projectiles (as it prevents it from breaking, lol)
             .build() // VERY IMPORTANT DONT DELETE FOR THE LOVE OF GOD PSLSSSSSS
+    )
+    LigmaEntities.cumProjectileEntityType = Registry.register(
+        Registry.ENTITY_TYPE,
+        Identifier(LigmaModMain.MODID, "cum"),
+        FabricEntityTypeBuilder.create(SpawnGroup.MISC) { type, world -> CumProjectileEntity(type, world) }
+            .dimensions(EntityDimensions.fixed(0.25f, 0.25f))
+            .trackRangeBlocks(4)
+            .trackedUpdateRate(10)
+            .build()
     )
     LigmaEntities.danielsCanidate = Registry.register(
         Registry.ENTITY_TYPE,

@@ -1,5 +1,5 @@
 {
-  "anime": {
+  "animemoan": {
     "sounds": [
       "ligma:animemoan"
     ]
@@ -17,6 +17,11 @@
   "vineboom": {
     "sounds": [
       "ligma:vineboom"
+    ]
+  },
+  "bitchwtf": {
+    "sounds": [
+      "ligma:bitchwtf"
     ]
   }
 }

@@ -16,7 +16,7 @@ class AhegaoFace(settings: Settings?) : Item(settings) {
 
     override fun use(world: World, user: PlayerEntity, hand: Hand?): TypedActionResult<ItemStack>? {
         val itemStack = user.getStackInHand(hand) // creates a new ItemStack instance of the user's itemStack in-hand
-        world.playSound(null, user.x, user.y, user.z, SoundEvents.ENTITY_SNOWBALL_THROW, SoundCategory.NEUTRAL, 0.5f, 1f) // plays a globalSoundEvent
+        // world.playSound(null, user.x, user.y, user.z, SoundEvents.ENTITY_SNOWBALL_THROW, SoundCategory.NEUTRAL, 0.5f, 1f) // plays a globalSoundEvent
         /*
 		user.getItemCooldownManager().set(this, 5);
 		Optionally, you can add a cooldown to your item's right-click use, similar to Ender Pearls.

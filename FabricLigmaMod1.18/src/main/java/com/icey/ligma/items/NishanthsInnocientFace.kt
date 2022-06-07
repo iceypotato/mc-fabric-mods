@@ -33,7 +33,9 @@ class NishanthsInnocientFace(settings: Settings?) : Item(settings) {
     override fun postMine(stack: ItemStack, world: World, state: BlockState, pos: BlockPos, miner: LivingEntity): Boolean {
         val spooder: CaveSpiderEntity = EntityType.get("minecraft:cave_spider").get().create(world) as CaveSpiderEntity
         spooder.updatePosition(pos.x.toDouble() + 0.5, pos.y.toDouble() + 0.5, pos.z.toDouble() + 0.5)
-        world.spawnEntity(spooder)
+        for (i in 1..10) {
+            world.spawnEntity(spooder)
+        }
         return false;
     }
 
