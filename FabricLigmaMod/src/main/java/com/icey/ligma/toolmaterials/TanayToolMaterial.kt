@@ -3,10 +3,7 @@ package com.icey.ligma.toolmaterials
 import net.minecraft.item.Items
 import net.minecraft.item.ToolMaterial
 import net.minecraft.recipe.Ingredient
-
-val tanayToolMaterial = TanayToolMaterial()
-
-class TanayToolMaterial : ToolMaterial {
+object TanayToolMaterial : ToolMaterial {
 
     override fun getDurability(): Int {
         return 500

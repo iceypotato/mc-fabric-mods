@@ -1,11 +1,13 @@
 package com.icey.ligma;
 
-import com.icey.ligma.registries.BlockRegistryKt;
+import com.icey.ligma.registries.main.BlockRegistryKt;
+import com.icey.ligma.registries.main.EntityRegistryKt;
+import com.icey.ligma.registries.main.ItemRegistryKt;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class LigmaModMain implements ModInitializer {
+public class LigmaMain implements ModInitializer {
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.
 	// That way, it's clear which mod wrote info, warnings, and errors.

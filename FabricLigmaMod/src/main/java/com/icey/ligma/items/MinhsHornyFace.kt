@@ -1,8 +1,8 @@
 package com.icey.ligma.items
 
-import com.icey.ligma.LigmaEntities
+import com.icey.ligma.LigmaSndEvnts
 import com.icey.ligma.entities.projectiles.CumProjectileEntity
-import com.icey.ligma.squirtSoundEvent
+import com.icey.ligma.registries.main.LigmaEnts
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.item.Item
 import net.minecraft.item.ItemStack
@@ -15,7 +15,8 @@ import net.minecraft.world.World
 class MinhsHornyFace(settings: Settings) : Item(settings) {
 
     override fun use(world: World?, user: PlayerEntity?, hand: Hand?): TypedActionResult<ItemStack> {
-        world!!.playSound(user, user!!.blockPos, squirtSoundEvent, SoundCategory.MASTER, 1f, 1f)
+        world!!.playSound(user, user!!.blockPos, LigmaSndEvnts.squirt, SoundCategory.AMBIENT, 1f, 1f)
+        world.playSound(user, user.blockPos, LigmaSndEvnts.minhBad, SoundCategory.AMBIENT, 1f, 1f)
         val itemStack = user.getStackInHand(hand) // creates a new ItemStack instance of the user's itemStack in-hand
 
         // user.getItemCooldownManager().set(this, 5);
@@ -25,7 +26,7 @@ class MinhsHornyFace(settings: Settings) : Item(settings) {
         // Optionally, you can add a cooldown to your item's right-click use, similar to Ender Pearls.
 
         if (!world.isClient) {
-            val cumEntity = CumProjectileEntity(LigmaEntities.cumProjectileEntityType, user, world)
+            val cumEntity = CumProjectileEntity(LigmaEnts.cumProjectile, user, world)
             cumEntity.setItem(itemStack)
             cumEntity.setVelocity(user, user.pitch, user.yaw, 0f, 1.5f, 1f)
             // snowballEntity.setProperties(user, user.getPitch(), user.getYaw(), 0.0F, 1.5F, 1.0F);

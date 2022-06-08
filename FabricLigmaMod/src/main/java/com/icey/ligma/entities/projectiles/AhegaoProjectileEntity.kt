@@ -2,8 +2,9 @@ package com.icey.ligma.entities.projectiles
 
 // import com.icey.ligma.packets.create
 import com.icey.ligma.*
-import com.icey.ligma.client.PacketID
 import com.icey.ligma.packets.EntitySpawnPacket
+import com.icey.ligma.registries.client.LigmaPkts
+import com.icey.ligma.registries.main.LigmaItms
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents
 import net.minecraft.entity.EntityType
 import net.minecraft.entity.LivingEntity
@@ -15,41 +16,9 @@ import net.minecraft.sound.SoundCategory
 import net.minecraft.util.hit.BlockHitResult
 import net.minecraft.util.hit.EntityHitResult
 import net.minecraft.util.hit.HitResult
+import net.minecraft.util.math.BlockPos
 import net.minecraft.world.World
 import net.minecraft.world.explosion.Explosion
-import java.util.*
-
-private class DumbTmTask(var x: Double, var y: Double, var z: Double, var world: World?) : TimerTask() {
-    var i = 0
-    override fun run() {
-        if (i >= 4) {
-            world!!.createExplosion(null, x, y, z, 20F, Explosion.DestructionType.BREAK)
-            world!!.playSound(null, x, y, z, vineBoomSoundEvent, SoundCategory.MASTER, 10f, 1f)
-            this.cancel()
-        }
-        i++
-    }
-}
-
-private class DumberTmTask(var x: Double, var y: Double, var z: Double, var world: World?) {
-
-    var i = 0
-
-    var tickthing = ServerTickEvents.EndTick {
-        run()
-    }
-
-    fun run() {
-        if (i == 4 * 20) {
-            world!!.createExplosion(null, x, y, z, 20F, Explosion.DestructionType.BREAK)
-            world!!.playSound(null, x, y, z, vineBoomSoundEvent, SoundCategory.MASTER, 3f, 1f)
-
-        }
-        if (i <= 4*20) i++
-    }
-
-}
-
 
 class AhegaoProjectileEntity : ThrownItemEntity {
 
@@ -60,7 +29,7 @@ class AhegaoProjectileEntity : ThrownItemEntity {
     constructor(entityType: EntityType<out ThrownItemEntity>, world: World, x: Double, y: Double, z: Double) : super(entityType, x, y, z, world)
 
     override fun getDefaultItem(): Item {
-        return ahegaoface
+        return LigmaItms.ahegaoface
     }
 
     override fun setItem(item: ItemStack?) {
@@ -89,19 +58,18 @@ class AhegaoProjectileEntity : ThrownItemEntity {
     override fun onBlockHit(blockHitResult: BlockHitResult?) {
         super.onBlockHit(blockHitResult)
         if (!this.world.isClient) {
-            // var timer = Timer()
-            // var tmTsk = DumbTmTask(x, y, z, world)
             var dumerTmTsk = DumberTmTask(x, y, z, world)
-            // world.createExplosion(null, this.x, this.y, this.z, 10F, Explosion.DestructionType.BREAK)
             ServerTickEvents.END_SERVER_TICK.register(dumerTmTsk.tickthing)
-            // timer.scheduleAtFixedRate(tmTsk, 0, 1000)
-            world!!.playSound(null, blockHitResult!!.blockPos, senpaiSoundEvent, SoundCategory.MASTER, 1f, 1f)
+            world!!.playSound(null, blockHitResult!!.blockPos, LigmaSndEvnts.senpai, SoundCategory.NEUTRAL, 1f, 1f)
         }
     }
 
     override fun onCollision(hitResult: HitResult?) {
         super.onCollision(hitResult)
         if (!this.world.isClient) {
+            var dumerTmTsk = DumberTmTask(x, y, z, world)
+            ServerTickEvents.END_SERVER_TICK.register(dumerTmTsk.tickthing)
+            world!!.playSound(null, BlockPos(hitResult!!.pos), LigmaSndEvnts.senpai, SoundCategory.NEUTRAL, 1f, 1f)
             world.sendEntityStatus(this, 3.toByte())
             this.kill()
         }
@@ -113,6 +81,25 @@ class AhegaoProjectileEntity : ThrownItemEntity {
 
     override fun createSpawnPacket(): Packet<*>? {
         super.createSpawnPacket()
-        return EntitySpawnPacket.create(this, PacketID)
+        return EntitySpawnPacket.create(this, LigmaPkts.packet)
     }
+}
+
+private class DumberTmTask(var x: Double, var y: Double, var z: Double, var world: World?) {
+
+    var i = 0
+
+    var tickthing = ServerTickEvents.EndTick {
+        run()
+    }
+
+    fun run() {
+        if (i == 4 * 20) {
+            world!!.createExplosion(null, x, y, z, 20F, Explosion.DestructionType.BREAK)
+            world!!.playSound(null, x, y, z, LigmaSndEvnts.vineBoom, SoundCategory.NEUTRAL, 3f, 1f)
+
+        }
+        if (i <= 4*20) i++
+    }
+
 }

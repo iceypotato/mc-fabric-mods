@@ -1,6 +1,6 @@
 package com.icey.ligma.items
 
-import com.icey.ligma.bitchWtfSoundEvent
+import com.icey.ligma.LigmaSndEvnts
 import net.minecraft.block.BlockState
 import net.minecraft.entity.EntityType
 import net.minecraft.entity.LivingEntity
@@ -24,7 +24,7 @@ class JustinsSmugFace(settings: Settings) : Item(settings) {
     }
 
     override fun use(world: World?, user: PlayerEntity?, hand: Hand?): TypedActionResult<ItemStack> {
-        world!!.playSound(null, user!!.blockPos, bitchWtfSoundEvent, SoundCategory.MASTER, 1f, 1f)
+        world!!.playSound(null, user!!.blockPos, LigmaSndEvnts.bitchWtf, SoundCategory.MASTER, 1f, 1f)
         return super.use(world, user, hand)
     }
 

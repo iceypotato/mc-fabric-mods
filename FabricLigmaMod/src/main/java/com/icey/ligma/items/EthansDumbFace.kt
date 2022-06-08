@@ -2,16 +2,12 @@ package com.icey.ligma.items
 
 import net.minecraft.entity.EntityType
 import net.minecraft.entity.LivingEntity
-import net.minecraft.entity.damage.DamageSource
-import net.minecraft.entity.effect.StatusEffect
 import net.minecraft.entity.effect.StatusEffectInstance
 import net.minecraft.entity.effect.StatusEffects
-import net.minecraft.entity.mob.CaveSpiderEntity
 import net.minecraft.entity.mob.MobEntity
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.item.Item
 import net.minecraft.item.ItemStack
-import net.minecraft.stat.Stat
 import net.minecraft.text.Text
 import net.minecraft.util.ActionResult
 import net.minecraft.util.Hand

@@ -1,8 +1,7 @@
 package com.icey.ligma.items
 
-import com.icey.ligma.LigmaEntities
-import com.icey.ligma.ahegaoface
 import com.icey.ligma.entities.projectiles.AhegaoProjectileEntity
+import com.icey.ligma.registries.main.LigmaEnts
 import net.minecraft.block.BlockState
 import net.minecraft.entity.EntityType
 import net.minecraft.entity.LivingEntity
@@ -52,7 +51,7 @@ class NishanthsInnocientFace(settings: Settings?) : Item(settings) {
 		// Optionally, you can add a cooldown to your item's right-click use, similar to Ender Pearls.
 
         if (!world!!.isClient) {
-            val ahegaoEntity = AhegaoProjectileEntity(LigmaEntities.ahegaoProjectileEntityType, user, world)
+            val ahegaoEntity = AhegaoProjectileEntity(LigmaEnts.ahegaoProjectile, user, world)
             ahegaoEntity.setItem(itemStack)
             ahegaoEntity.setVelocity(user, user.pitch, user.yaw, 0f, 1.5f, 1f)
             // snowballEntity.setProperties(user, user.getPitch(), user.getYaw(), 0.0F, 1.5F, 1.0F);

@@ -43,5 +43,22 @@
     "sounds": [
       "ligma:orgasmearrape"
     ]
+  },
+  "manscream": {
+    "sounds": [
+      "ligma:manscreaming" 
+    ]
+  },
+  "minhbad": {
+    "sounds": [
+      "ligma:rword",
+      "ligma:yangholyfuck",
+      "ligma:manscreaming"
+    ]
+  },
+  "takeyourpantsoff": {
+    "sounds": [
+      "ligma:takeyourpantsoff"
+    ]
   }
 }

@@ -1,12 +1,10 @@
 package com.icey.ligma.entities.projectiles
 
-import com.icey.ligma.LigmaEntities
-import com.icey.ligma.client.PacketID
-import com.icey.ligma.cumItem
 import com.icey.ligma.packets.EntitySpawnPacket
+import com.icey.ligma.registries.client.LigmaPkts
+import com.icey.ligma.registries.main.LigmaItms
 import net.minecraft.entity.EntityType
 import net.minecraft.entity.LivingEntity
-import net.minecraft.entity.damage.DamageSource
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity
 import net.minecraft.item.Item
 import net.minecraft.item.ItemStack
@@ -25,7 +23,7 @@ class CumProjectileEntity : ThrownItemEntity {
     constructor(entityType: EntityType<out ThrownItemEntity>, world: World, x: Double, y: Double, z: Double) : super(entityType, x, y, z, world)
 
     override fun getDefaultItem(): Item {
-        return cumItem
+        return LigmaItms.cumItem
     }
 
     override fun setItem(item: ItemStack?) {
@@ -52,7 +50,7 @@ class CumProjectileEntity : ThrownItemEntity {
 
     override fun createSpawnPacket(): Packet<*>? {
         super.createSpawnPacket()
-        return EntitySpawnPacket.create(this, PacketID)
+        return EntitySpawnPacket.create(this, LigmaPkts.packet)
     }
 
 }

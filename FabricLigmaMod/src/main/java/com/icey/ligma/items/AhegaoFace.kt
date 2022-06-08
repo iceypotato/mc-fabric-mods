@@ -1,12 +1,10 @@
 package com.icey.ligma.items
 
-import com.icey.ligma.LigmaEntities
 import com.icey.ligma.entities.projectiles.AhegaoProjectileEntity
+import com.icey.ligma.registries.main.LigmaEnts
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.item.Item
 import net.minecraft.item.ItemStack
-import net.minecraft.sound.SoundCategory
-import net.minecraft.sound.SoundEvents
 import net.minecraft.stat.Stats
 import net.minecraft.util.Hand
 import net.minecraft.util.TypedActionResult
@@ -23,7 +21,7 @@ class AhegaoFace(settings: Settings?) : Item(settings) {
 		Optionally, you can add a cooldown to your item's right-click use, similar to Ender Pearls.
 		*/
         if (!world.isClient) {
-            val ahegaoProjectileEntity = AhegaoProjectileEntity(LigmaEntities.ahegaoProjectileEntityType, user, world)
+            val ahegaoProjectileEntity = AhegaoProjectileEntity(LigmaEnts.ahegaoProjectile, user, world)
             ahegaoProjectileEntity.setItem(itemStack)
             ahegaoProjectileEntity.setVelocity(user, user.pitch, user.yaw, 0.0f, 1.5f, 0f)
             /*

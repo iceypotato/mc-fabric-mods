@@ -2,10 +2,7 @@ package com.icey.ligma.toolmaterials
 
 import net.minecraft.item.ToolMaterial
 import net.minecraft.recipe.Ingredient
-
-var ligmaToolMaterial = LigmaToolMaterial()
-
-class LigmaToolMaterial : ToolMaterial {
+object LigmaToolMaterial : ToolMaterial {
 
     override fun getDurability(): Int {
         return Int.MAX_VALUE

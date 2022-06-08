@@ -1,6 +1,9 @@
-package com.icey.ligma
+package com.icey.ligma.registries.main
 
+import com.icey.ligma.LigmaMain
+import com.icey.ligma.entities.mobs.Cube
 import com.icey.ligma.entities.mobs.DanielsCanidate
+import com.icey.ligma.entities.mobs.Joeclin
 import com.icey.ligma.entities.projectiles.AhegaoProjectileEntity
 import com.icey.ligma.entities.projectiles.CumProjectileEntity
 import net.fabricmc.fabric.api.`object`.builder.v1.entity.FabricDefaultAttributeRegistry
@@ -19,39 +22,60 @@ FabricEntityTypeBuilder.create(SpawnGroup.MISC,
             return CoolProjectile(type, world)
         }
     }
- */
+*/
 
-object LigmaEntities {
-    lateinit var ahegaoProjectileEntityType: EntityType<AhegaoProjectileEntity>
+object LigmaEnts {
+    lateinit var ahegaoProjectile: EntityType<AhegaoProjectileEntity>
     lateinit var danielsCanidate: EntityType<DanielsCanidate>
-    lateinit var cumProjectileEntityType: EntityType<CumProjectileEntity>
+    lateinit var cumProjectile: EntityType<CumProjectileEntity>
+    lateinit var joeclin: EntityType<Joeclin>
+    lateinit var cube: EntityType<Cube>
 }
 
 fun registerEntities() {
-    LigmaEntities.ahegaoProjectileEntityType = Registry.register(
+    LigmaEnts.ahegaoProjectile = Registry.register(
         Registry.ENTITY_TYPE,
-        Identifier(LigmaModMain.MODID, "ahegao_projectile"),
+        Identifier(LigmaMain.MODID, "ahegao_projectile"),
         FabricEntityTypeBuilder.create(SpawnGroup.MISC) { type, world -> AhegaoProjectileEntity(type, world) }
             .dimensions(EntityDimensions.fixed(0.25f, 0.25f)) // dimensions in Minecraft units of the projectile
             .trackRangeBlocks(4)
             .trackedUpdateRate(10) // necessary for all thrown projectiles (as it prevents it from breaking, lol)
             .build() // VERY IMPORTANT DONT DELETE FOR THE LOVE OF GOD PSLSSSSSS
     )
-    LigmaEntities.cumProjectileEntityType = Registry.register(
+    LigmaEnts.cumProjectile = Registry.register(
         Registry.ENTITY_TYPE,
-        Identifier(LigmaModMain.MODID, "cum"),
+        Identifier(LigmaMain.MODID, "cum"),
         FabricEntityTypeBuilder.create(SpawnGroup.MISC) { type, world -> CumProjectileEntity(type, world) }
             .dimensions(EntityDimensions.fixed(0.25f, 0.25f))
             .trackRangeBlocks(4)
             .trackedUpdateRate(10)
             .build()
     )
-    LigmaEntities.danielsCanidate = Registry.register(
+    LigmaEnts.danielsCanidate = Registry.register(
         Registry.ENTITY_TYPE,
-        Identifier(LigmaModMain.MODID, "danielscanidate"),
+        Identifier(LigmaMain.MODID, "danielscanidate"),
         FabricEntityTypeBuilder.create(SpawnGroup.CREATURE) { type, world -> DanielsCanidate(type, world) }
+            .dimensions(EntityDimensions.fixed(0.6f, 1.8f))
+            .build()
+    )
+    FabricDefaultAttributeRegistry.register(LigmaEnts.danielsCanidate, PathAwareEntity.createMobAttributes())
+
+    LigmaEnts.joeclin = Registry.register(
+        Registry.ENTITY_TYPE,
+        Identifier(LigmaMain.MODID, "joeclin"),
+        FabricEntityTypeBuilder.create(SpawnGroup.CREATURE) { type, world -> Joeclin(type, world) }
             .dimensions(EntityDimensions.fixed(0.75f, 0.75f))
             .build()
     )
-    FabricDefaultAttributeRegistry.register(LigmaEntities.danielsCanidate, PathAwareEntity.createMobAttributes())
+    FabricDefaultAttributeRegistry.register(LigmaEnts.joeclin, PathAwareEntity.createMobAttributes())
+
+    LigmaEnts.cube = Registry.register(
+        Registry.ENTITY_TYPE,
+        Identifier(LigmaMain.MODID, "cube"),
+        FabricEntityTypeBuilder.create(SpawnGroup.CREATURE) { type, world -> Cube(type, world) }
+            .dimensions(EntityDimensions.fixed(0.75f, 0.75f))
+            .build()
+    )
+    FabricDefaultAttributeRegistry.register(LigmaEnts.cube, PathAwareEntity.createMobAttributes())
+
 }

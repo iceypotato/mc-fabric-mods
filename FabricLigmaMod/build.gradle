@@ -83,3 +83,10 @@ compileTestKotlin {
         jvmTarget = "17"
     }
 }
+
+idea {
+	module {
+		downloadJavadoc = true
+		downloadSources = true
+	}
+}
