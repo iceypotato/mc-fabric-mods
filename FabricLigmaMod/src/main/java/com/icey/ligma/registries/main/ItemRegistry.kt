@@ -29,6 +29,7 @@ object LigmaItms {
     var danielsFunnyFace = DanielsFunnyFace(Item.Settings().group(ItemGroup.MISC).maxCount(1))
     var adalsDeadFace = AdalsDeadFace(Item.Settings().group(ItemGroup.MISC).maxCount(1))
     var theVillageE3 = TheVillageE3(Item.Settings().group(ItemGroup.MISC))
+    var notTheVillage = NotTheVillage(Item.Settings().group(ItemGroup.MISC).maxCount(1))
 }
 
 
@@ -47,6 +48,7 @@ fun registerItems() {
     Registry.register(Registry.ITEM, Identifier(LigmaMain.MODID, "danielsfunnyface"), LigmaItms.danielsFunnyFace)
     Registry.register(Registry.ITEM, Identifier(LigmaMain.MODID, "adalsdeadface"), LigmaItms.adalsDeadFace)
     Registry.register(Registry.ITEM, Identifier(LigmaMain.MODID, "thevillagee3"), LigmaItms.theVillageE3)
+    Registry.register(Registry.ITEM, Identifier(LigmaMain.MODID, "notthevillage"), LigmaItms.notTheVillage)
 
     //todo initialize projectile first
 }

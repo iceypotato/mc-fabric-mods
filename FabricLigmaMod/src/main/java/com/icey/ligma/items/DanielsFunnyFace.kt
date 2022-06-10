@@ -1,7 +1,7 @@
 package com.icey.ligma.items
 
 import com.icey.ligma.LigmaSndEvnts
-import com.icey.ligma.entities.mobs.DanielsCanidate
+import com.icey.ligma.entities.mobs.DanielsCanidateEntity
 import net.minecraft.entity.Entity
 import net.minecraft.entity.EntityType
 import net.minecraft.entity.LivingEntity
@@ -17,7 +17,7 @@ class DanielsFunnyFace(settings: Settings) : Item(settings) {
     override fun useOnEntity(stack: ItemStack?, user: PlayerEntity?, entity: LivingEntity?, hand: Hand?): ActionResult {
         entity!!.remove(Entity.RemovalReason.KILLED)
         user!!.world.playSound(user, user.x, user.y, user.z, LigmaSndEvnts.takepantsoff, SoundCategory.NEUTRAL, 1f, 1f)
-        val danielsCanidate: DanielsCanidate = EntityType.get("ligma:danielscanidate").get().create(user.world) as DanielsCanidate
+        val danielsCanidate: DanielsCanidateEntity = EntityType.get("ligma:danielscanidate").get().create(user.world) as DanielsCanidateEntity
         danielsCanidate.updatePosition(entity.x, entity.y, entity.z)
         user.world.spawnEntity(danielsCanidate)
         return ActionResult.SUCCESS

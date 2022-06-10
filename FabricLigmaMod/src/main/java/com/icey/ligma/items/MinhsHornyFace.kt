@@ -3,6 +3,7 @@ package com.icey.ligma.items
 import com.icey.ligma.LigmaSndEvnts
 import com.icey.ligma.entities.projectiles.CumProjectileEntity
 import com.icey.ligma.registries.main.LigmaEnts
+import net.minecraft.entity.LivingEntity
 import net.minecraft.entity.player.PlayerEntity
 import net.minecraft.item.Item
 import net.minecraft.item.ItemStack
@@ -14,9 +15,15 @@ import net.minecraft.world.World
 
 class MinhsHornyFace(settings: Settings) : Item(settings) {
 
+    override fun postHit(stack: ItemStack?, target: LivingEntity?, attacker: LivingEntity?): Boolean {
+        if (target!!.health <= 0) {
+            attacker!!.world.playSound(null, attacker.blockPos, LigmaSndEvnts.minhBad, SoundCategory.AMBIENT, 1f, 1f)
+        }
+        return super.postHit(stack, target, attacker)
+    }
+
     override fun use(world: World?, user: PlayerEntity?, hand: Hand?): TypedActionResult<ItemStack> {
         world!!.playSound(user, user!!.blockPos, LigmaSndEvnts.squirt, SoundCategory.AMBIENT, 1f, 1f)
-        world.playSound(user, user.blockPos, LigmaSndEvnts.minhBad, SoundCategory.AMBIENT, 1f, 1f)
         val itemStack = user.getStackInHand(hand) // creates a new ItemStack instance of the user's itemStack in-hand
 
         // user.getItemCooldownManager().set(this, 5);

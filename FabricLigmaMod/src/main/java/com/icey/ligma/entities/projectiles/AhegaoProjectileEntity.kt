@@ -83,6 +83,10 @@ class AhegaoProjectileEntity : ThrownItemEntity {
         super.createSpawnPacket()
         return EntitySpawnPacket.create(this, LigmaPkts.packet)
     }
+
+    override fun tick() {
+        super.tick()
+    }
 }
 
 private class DumberTmTask(var x: Double, var y: Double, var z: Double, var world: World?) {

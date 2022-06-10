@@ -1,12 +1,10 @@
 package com.icey.ligma.client.model
 
-import com.icey.ligma.entities.mobs.DanielsCanidate
+import com.icey.ligma.entities.mobs.DanielsCanidateEntity
 import net.minecraft.client.model.*
-import net.minecraft.client.render.entity.model.BipedEntityModel
-import net.minecraft.client.render.entity.model.EntityModelPartNames
 import net.minecraft.client.render.entity.model.PlayerEntityModel
 
-class DanielsCanidateModel(modelPart: ModelPart) : PlayerEntityModel<DanielsCanidate>(modelPart, true) {
+class DanielsCanidateModel(modelPart: ModelPart) : PlayerEntityModel<DanielsCanidateEntity>(modelPart, true) {
 
     companion object {
 

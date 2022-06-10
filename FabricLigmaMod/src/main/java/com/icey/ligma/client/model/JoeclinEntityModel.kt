@@ -1,6 +1,6 @@
 package com.icey.ligma.client.model
 
-import com.icey.ligma.entities.mobs.Joeclin
+import com.icey.ligma.entities.mobs.JoeclinEntity
 import net.minecraft.client.model.*
 import net.minecraft.client.render.VertexConsumer
 import net.minecraft.client.render.entity.model.EntityModel
@@ -8,7 +8,7 @@ import net.minecraft.client.render.entity.model.EntityModelPartNames
 import net.minecraft.client.util.math.MatrixStack
 import org.spongepowered.include.com.google.common.collect.ImmutableList
 
-class JoeclinEntityModel(modelPart: ModelPart) : EntityModel<Joeclin>() {
+class JoeclinEntityModel(modelPart: ModelPart) : EntityModel<JoeclinEntity>() {
 
     var base = modelPart.getChild(EntityModelPartNames.CUBE)
 
@@ -29,7 +29,7 @@ class JoeclinEntityModel(modelPart: ModelPart) : EntityModel<Joeclin>() {
         }
     }
 
-    override fun setAngles(entity: Joeclin?, limbAngle: Float, limbDistance: Float, animationProgress: Float, headYaw: Float, headPitch: Float) {
+    override fun setAngles(entity: JoeclinEntity?, limbAngle: Float, limbDistance: Float, animationProgress: Float, headYaw: Float, headPitch: Float) {
 
     }
 }
