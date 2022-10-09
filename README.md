@@ -19,7 +19,7 @@ Download here: https://www.oracle.com/java/technologies/downloads/
 TODO
 1. https://fabricmc.net/wiki/tutorial:vscode_setup
 
-## No IDE Method:
+### No IDE Method:
 1. open powershell on windows or terminal if on mac
 2. cd to cloned repo and into the FabricLigmaMod
 3. type `.\gradlew build` then `.\gradlew runClient`
