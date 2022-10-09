@@ -2,23 +2,24 @@
 
 contains ligma
 
-Prereqs:
-Java 17 or higher installed.
+## How to run the mod
+
+# Prereqs:
+You must have Java 17 or higher installed.
 Download here: https://www.oracle.com/java/technologies/downloads/
-Windows: https://download.oracle.com/java/17/latest/jdk-17_windows-x64_bin.exe
-Mac (Intel): https://download.oracle.com/java/17/latest/jdk-17_macos-x64_bin.dmg
 
-Intellij Idea Instructions:
-1. install intellij idea
-2. clone this repo
-3. open the folder (FabricLigmaMod) inside the cloned repo
-4. wait for things to download, and when finished, restart intellij and reopen the project
-5. then in the top right click on the play button
+# Intellij Idea Instructions:
+1. Download and install Intellij Idea (Ulitmate or Community) from JetBrains.
+2. Clone this repo (using git or downloading the zip)
+3. Look for where you downloaded the folder, and open "FabricLigmaMod" in Intellij Idea.
+4. Wait for things to download, then restart Intellij.
+5. In the top right area of Intellij, click on the play button to run Minecraft with the mod.
 
-Vscode:
+# Visual Studio Code:
+TODO
 1. https://fabricmc.net/wiki/tutorial:vscode_setup
 
-Terminal method:
+# No IDE Method:
 1. open powershell on windows or terminal if on mac
 2. cd to cloned repo and into the FabricLigmaMod
 3. type `.\gradlew build` then `.\gradlew runClient`
