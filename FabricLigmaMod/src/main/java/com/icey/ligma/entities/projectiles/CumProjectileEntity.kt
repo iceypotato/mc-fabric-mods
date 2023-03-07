@@ -2,7 +2,7 @@ package com.icey.ligma.entities.projectiles
 
 import com.icey.ligma.packets.EntitySpawnPacket
 import com.icey.ligma.registries.client.LigmaPkts
-import com.icey.ligma.registries.main.LigmaItms
+import com.icey.ligma.registries.main.LigmaItems
 import net.minecraft.entity.EntityType
 import net.minecraft.entity.LivingEntity
 import net.minecraft.entity.projectile.thrown.ThrownItemEntity
@@ -23,7 +23,7 @@ class CumProjectileEntity : ThrownItemEntity {
     constructor(entityType: EntityType<out ThrownItemEntity>, world: World, x: Double, y: Double, z: Double) : super(entityType, x, y, z, world)
 
     override fun getDefaultItem(): Item {
-        return LigmaItms.cumItem
+        return LigmaItems.cumItem
     }
 
     override fun setItem(item: ItemStack?) {

@@ -3,6 +3,7 @@ package com.icey.ligma
 import net.minecraft.sound.SoundEvent
 import net.minecraft.util.Identifier
 import net.minecraft.util.registry.Registry
+import javax.sound.sampled.SourceDataLine
 
 object LigmaSndIds {
 
@@ -18,6 +19,7 @@ object LigmaSndIds {
     var manScreaming = Identifier(LigmaMain.MODID, "manscream")
     var minhBad = Identifier(LigmaMain.MODID, "minhbad")
     var takepantsoff = Identifier(LigmaMain.MODID, "takeyourpantsoff")
+    var jouzu = Identifier(LigmaMain.MODID, "jouzu")
 
 }
 object LigmaSndEvnts {
@@ -34,6 +36,7 @@ object LigmaSndEvnts {
     var manScreaming = SoundEvent(LigmaSndIds.manScreaming)
     var minhBad = SoundEvent(LigmaSndIds.minhBad)
     var takepantsoff = SoundEvent(LigmaSndIds.takepantsoff)
+    var jouzu = SoundEvent(LigmaSndIds.jouzu)
 
 }
 fun registerSounds() {
@@ -49,4 +52,5 @@ fun registerSounds() {
     Registry.register(Registry.SOUND_EVENT, LigmaSndIds.manScreaming, LigmaSndEvnts.manScreaming)
     Registry.register(Registry.SOUND_EVENT, LigmaSndIds.minhBad, LigmaSndEvnts.minhBad)
     Registry.register(Registry.SOUND_EVENT, LigmaSndIds.takepantsoff, LigmaSndEvnts.takepantsoff)
+    Registry.register(Registry.SOUND_EVENT, LigmaSndIds.jouzu, LigmaSndEvnts.jouzu)
 }

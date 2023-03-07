@@ -4,7 +4,7 @@ package com.icey.ligma.entities.projectiles
 import com.icey.ligma.*
 import com.icey.ligma.packets.EntitySpawnPacket
 import com.icey.ligma.registries.client.LigmaPkts
-import com.icey.ligma.registries.main.LigmaItms
+import com.icey.ligma.registries.main.LigmaItems
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents
 import net.minecraft.entity.EntityType
 import net.minecraft.entity.LivingEntity
@@ -29,7 +29,7 @@ class AhegaoProjectileEntity : ThrownItemEntity {
     constructor(entityType: EntityType<out ThrownItemEntity>, world: World, x: Double, y: Double, z: Double) : super(entityType, x, y, z, world)
 
     override fun getDefaultItem(): Item {
-        return LigmaItms.ahegaoface
+        return LigmaItems.ahegaoface
     }
 
     override fun setItem(item: ItemStack?) {

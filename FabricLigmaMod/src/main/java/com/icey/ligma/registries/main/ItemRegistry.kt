@@ -14,7 +14,7 @@ import net.minecraft.util.registry.Registry
 
 //var ligma = Item(Item.Settings().group(ItemGroup.MISC))
 
-object LigmaItms {
+object LigmaItems {
     var ahegaoface = AhegaoFace(Item.Settings().group(ItemGroup.SEARCH).maxCount(64))
     var cumItem = CumItem(Item.Settings().group(ItemGroup.SEARCH).maxCount(64))
 
@@ -30,25 +30,27 @@ object LigmaItms {
     var adalsDeadFace = AdalsDeadFace(Item.Settings().group(ItemGroup.MISC).maxCount(1))
     var theVillageE3 = TheVillageE3(Item.Settings().group(ItemGroup.MISC))
     var notTheVillage = NotTheVillage(Item.Settings().group(ItemGroup.MISC).maxCount(1))
+    var genki2 = GenkiTextbook(Item.Settings().group(ItemGroup.MISC).maxCount(1))
 }
 
 
 fun registerItems() {
 
-    Registry.register(Registry.ITEM, Identifier(LigmaMain.MODID, "ahegaoface"), LigmaItms.ahegaoface)
-    Registry.register(Registry.ITEM, Identifier(LigmaMain.MODID, "cum"), LigmaItms.cumItem)
-    Registry.register(Registry.ITEM, Identifier(LigmaMain.MODID, "nickysbabyface"), LigmaItms.nickysBabyFace)
-    Registry.register(Registry.ITEM, Identifier(LigmaMain.MODID, "tanaysfuckingface"), LigmaItms.tanaysFuckingFace)
-    Registry.register(Registry.ITEM, Identifier(LigmaMain.MODID, "ethansdumbface"), LigmaItms.ethansDumbFace)
-    Registry.register(Registry.ITEM, Identifier(LigmaMain.MODID, "evensweirdface"), LigmaItms.evensWeirdFace)
-    Registry.register(Registry.ITEM, Identifier(LigmaMain.MODID, "deerajssmartassface"), LigmaItms.deerajsSmartassFace)
-    Registry.register(Registry.ITEM, Identifier(LigmaMain.MODID, "nishanthsinnocientface"), LigmaItms.nishanthsInnocientFace)
-    Registry.register(Registry.ITEM, Identifier(LigmaMain.MODID, "justinssmugface"), LigmaItms.justinsSmugFace)
-    Registry.register(Registry.ITEM, Identifier(LigmaMain.MODID, "minhshornyface"), LigmaItms.minhsHornyFace)
-    Registry.register(Registry.ITEM, Identifier(LigmaMain.MODID, "danielsfunnyface"), LigmaItms.danielsFunnyFace)
-    Registry.register(Registry.ITEM, Identifier(LigmaMain.MODID, "adalsdeadface"), LigmaItms.adalsDeadFace)
-    Registry.register(Registry.ITEM, Identifier(LigmaMain.MODID, "thevillagee3"), LigmaItms.theVillageE3)
-    Registry.register(Registry.ITEM, Identifier(LigmaMain.MODID, "notthevillage"), LigmaItms.notTheVillage)
+    Registry.register(Registry.ITEM, Identifier(LigmaMain.MODID, "ahegaoface"), LigmaItems.ahegaoface)
+    Registry.register(Registry.ITEM, Identifier(LigmaMain.MODID, "cum"), LigmaItems.cumItem)
+    Registry.register(Registry.ITEM, Identifier(LigmaMain.MODID, "nickysbabyface"), LigmaItems.nickysBabyFace)
+    Registry.register(Registry.ITEM, Identifier(LigmaMain.MODID, "tanaysfuckingface"), LigmaItems.tanaysFuckingFace)
+    Registry.register(Registry.ITEM, Identifier(LigmaMain.MODID, "ethansdumbface"), LigmaItems.ethansDumbFace)
+    Registry.register(Registry.ITEM, Identifier(LigmaMain.MODID, "evensweirdface"), LigmaItems.evensWeirdFace)
+    Registry.register(Registry.ITEM, Identifier(LigmaMain.MODID, "deerajssmartassface"), LigmaItems.deerajsSmartassFace)
+    Registry.register(Registry.ITEM, Identifier(LigmaMain.MODID, "nishanthsinnocientface"), LigmaItems.nishanthsInnocientFace)
+    Registry.register(Registry.ITEM, Identifier(LigmaMain.MODID, "justinssmugface"), LigmaItems.justinsSmugFace)
+    Registry.register(Registry.ITEM, Identifier(LigmaMain.MODID, "minhshornyface"), LigmaItems.minhsHornyFace)
+    Registry.register(Registry.ITEM, Identifier(LigmaMain.MODID, "danielsfunnyface"), LigmaItems.danielsFunnyFace)
+    Registry.register(Registry.ITEM, Identifier(LigmaMain.MODID, "adalsdeadface"), LigmaItems.adalsDeadFace)
+    Registry.register(Registry.ITEM, Identifier(LigmaMain.MODID, "thevillagee3"), LigmaItems.theVillageE3)
+    Registry.register(Registry.ITEM, Identifier(LigmaMain.MODID, "notthevillage"), LigmaItems.notTheVillage)
+    Registry.register(Registry.ITEM, Identifier(LigmaMain.MODID, "genki2"), LigmaItems.genki2)
 
     //todo initialize projectile first
 }
